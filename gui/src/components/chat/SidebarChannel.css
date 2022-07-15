@@ -1,0 +1,19 @@
+.sidebarChannel {
+  display: flex;
+  margin: 0;
+}
+
+.sidebarChannel > h4 {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  padding-left: 15px;
+  align-items: center;
+  color: rgb(93, 93, 93);
+  cursor: pointer;
+}
+
+.sidebarChannel:hover > h4 {
+  color: black;
+  text-shadow: 2px 2px 4px rgb(149, 149, 149);
+}

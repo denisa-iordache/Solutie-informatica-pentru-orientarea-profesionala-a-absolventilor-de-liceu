@@ -1,12 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import {
-  Form,
-  Button,
-  Modal,
-  ListGroup,
-  ButtonGroup,
-  Accordion,
-} from "react-bootstrap";
+import { Form, Button, Modal, ListGroup, ButtonGroup } from "react-bootstrap";
 import { useAuthentication } from "../context/AuthenticationContext";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
@@ -39,11 +32,10 @@ export default function UpdatePofile() {
   const [ramuri, setRamuri] = useState([]);
   const [cities, setCities] = useState([]);
 
-
   useEffect(() => {
     if (ramuri[3] || (ramuri[3] && ramuri[4])) {
       fetch(
-        `http://localhost:8080/specializationsTotalRamuraSomeFields/${ramuri[0]}/${ramuri[1]}/${ramuri[2]}/${ramuri[3]}/${ramuri[4]}`,
+        `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalRamuraSomeFields/${ramuri[0]}/${ramuri[1]}/${ramuri[2]}/${ramuri[3]}/${ramuri[4]}`,
         {
           method: "GET",
           "Content-Type": "application/json",
@@ -56,7 +48,7 @@ export default function UpdatePofile() {
         });
     } else {
       fetch(
-        `http://localhost:8080/specializationsTotalRamuraSomeFields/${ramuri[0]}/${ramuri[1]}/${ramuri[2]}`,
+        `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalRamuraSomeFields/${ramuri[0]}/${ramuri[1]}/${ramuri[2]}`,
         {
           method: "GET",
           "Content-Type": "application/json",
@@ -125,7 +117,7 @@ export default function UpdatePofile() {
   );
 
   const getUsers = () => {
-    fetch(`http://localhost:8080/users`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/users`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -200,7 +192,7 @@ export default function UpdatePofile() {
       .catch((error) => {
         console.log(error);
       });
-    fetch(`http://localhost:8080/users/${currentUser.uid}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/users/${currentUser.uid}`, {
       method: "DELETE",
     }).then((res) => res.json());
   }
@@ -212,7 +204,7 @@ export default function UpdatePofile() {
   }, [currentUser]);
 
   const getUserDetails = async () => {
-    fetch(`http://localhost:8080/users/${currentUser.uid}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/users/${currentUser.uid}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -259,7 +251,7 @@ export default function UpdatePofile() {
         prenume: surnameRef.current.value,
         username: usernameRef.current.value,
       };
-      fetch(`http://localhost:8080/users/${currentUser.uid}`, {
+      fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/users/${currentUser.uid}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -306,19 +298,11 @@ export default function UpdatePofile() {
     return resultAccordion;
   };
 
-  function getArraysIntersection(a1, a2) {
-    return a1.filter(function (n) {
-      return a2.indexOf(n) !== -1;
-    });
-  }
-
   const labels = () => {
     let resultArray = [];
-    // let aparitii = usersResult();
     let filteredArray = [];
     if (user.quizResult) {
       resultArray = user.quizResult.split(";");
-      // filteredArray = getArraysIntersection(Object.keys(aparitii), resultArray);
       for (let i = 0; i < resultArray.length; i++) {
         if (resultArray[i] != "") {
           filteredArray.push(resultArray[i]);
@@ -335,14 +319,12 @@ export default function UpdatePofile() {
     let filteredArrayWithPercentages = [];
     if (user.quizResult) {
       resultArray = user.quizResult.split(";");
-      // filteredArray = getArraysIntersection(Object.keys(aparitii), resultArray);
       for (let i = 0; i < resultArray.length; i++) {
         if (resultArray[i] != "") {
           filteredArray.push(resultArray[i]);
         }
       }
       for (let i = 0; i < filteredArray.length; i++) {
-        // setRamura(filteredArray[i]);
         let index = Object.keys(aparitii).indexOf(filteredArray[i]);
         let value = Object.values(aparitii)[index];
         let numberValue = parseInt(value);
@@ -695,7 +677,7 @@ export default function UpdatePofile() {
           <Workbook.Column label="oras" value="oras" />
           <Workbook.Column label="regiune" value="regiune" />
           <Workbook.Column label="statut" value="statut" />
-            <Workbook.Column label="link" value="link" />
+          <Workbook.Column label="link" value="link" />
           <Workbook.Column
             label="numar_locuri_buget"
             value="numar_locuri_buget"
@@ -726,7 +708,7 @@ export default function UpdatePofile() {
           <Workbook.Column label="oras" value="oras" />
           <Workbook.Column label="regiune" value="regiune" />
           <Workbook.Column label="statut" value="statut" />
-            <Workbook.Column label="link" value="link" />
+          <Workbook.Column label="link" value="link" />
           <Workbook.Column
             label="numar_locuri_buget"
             value="numar_locuri_buget"
@@ -757,7 +739,7 @@ export default function UpdatePofile() {
           <Workbook.Column label="oras" value="oras" />
           <Workbook.Column label="regiune" value="regiune" />
           <Workbook.Column label="statut" value="statut" />
-            <Workbook.Column label="link" value="link" />
+          <Workbook.Column label="link" value="link" />
           <Workbook.Column
             label="numar_locuri_buget"
             value="numar_locuri_buget"

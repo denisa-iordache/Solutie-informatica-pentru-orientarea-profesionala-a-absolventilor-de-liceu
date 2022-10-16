@@ -7,7 +7,7 @@ export default function LogIn() {
     <>
       <Header />
       <Specializations />
-      <Footer/>
+      <Footer />
     </>
   );
 }

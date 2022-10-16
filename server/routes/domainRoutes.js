@@ -45,7 +45,10 @@ application.get("/domains/:domainId", async (req, res, next) => {
 
 application.get("/domainName/:name", async (req, res, next) => {
   try {
-    const regions = await sequelize.query(`SELECT * FROM domains where nume='${req.params.name}'`, { type: QueryTypes.SELECT });
+    const regions = await sequelize.query(
+      `SELECT * FROM domains where nume='${req.params.name}'`,
+      { type: QueryTypes.SELECT }
+    );
     if (regions.length > 0) {
       res.json(regions);
     } else {

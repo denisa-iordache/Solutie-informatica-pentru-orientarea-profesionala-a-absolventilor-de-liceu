@@ -169,7 +169,15 @@ export default function About() {
           </Card>
         ) : (
           <div className="d-flex flex-column">
-            <Card style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", marginTop:"2rem", marginLeft:"2rem", marginRight:"2rem", marginBottom:"2rem" }}>
+            <Card
+              style={{
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                marginTop: "2rem",
+                marginLeft: "2rem",
+                marginRight: "2rem",
+                marginBottom: "2rem",
+              }}
+            >
               <Card.Img variant="top" src="undraw_graduation_re_gthn.svg" />
               <Card.Body>
                 <Card.Title>
@@ -185,7 +193,14 @@ export default function About() {
               </Card.Body>
             </Card>
 
-            <Card style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", marginLeft:"2rem", marginRight:"2rem", marginBottom:"2rem" }}>
+            <Card
+              style={{
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                marginLeft: "2rem",
+                marginRight: "2rem",
+                marginBottom: "2rem",
+              }}
+            >
               <Card.Img variant="top" src="undraw_searching_re_3ra9.svg" />
               <Card.Body>
                 <Card.Title>
@@ -202,7 +217,14 @@ export default function About() {
               </Card.Body>
             </Card>
 
-            <Card style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", marginLeft:"2rem", marginRight:"2rem", marginBottom:"2rem"  }}>
+            <Card
+              style={{
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                marginLeft: "2rem",
+                marginRight: "2rem",
+                marginBottom: "2rem",
+              }}
+            >
               <Card.Img variant="top" src="undraw_pending_approval_xuu9.svg" />
               <Card.Body>
                 <Card.Title>
@@ -220,7 +242,14 @@ export default function About() {
               </Card.Body>
             </Card>
 
-            <Card style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", marginLeft:"2rem", marginRight:"2rem", marginBottom:"2rem" }}>
+            <Card
+              style={{
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                marginLeft: "2rem",
+                marginRight: "2rem",
+                marginBottom: "2rem",
+              }}
+            >
               <Card.Img variant="top" src="undraw_chatting_re_j55r.svg" />
               <Card.Body>
                 <Card.Title>

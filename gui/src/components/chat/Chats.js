@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
 import { useAuthentication } from "../../context/AuthenticationContext";
@@ -24,11 +24,11 @@ export default function Chats() {
           {matches ? (
             <div className="d-flex">
               <Sidebar />
-              <Chat/>
+              <Chat />
             </div>
           ) : (
             <div>
-              <Chat/>
+              <Chat />
             </div>
           )}
         </>

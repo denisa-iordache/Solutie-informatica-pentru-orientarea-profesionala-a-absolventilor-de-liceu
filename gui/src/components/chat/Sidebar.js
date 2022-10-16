@@ -43,9 +43,21 @@ export default function Sidebar() {
     >
       <div>
         <div>
-          {currentUser.uid === "7pDZzLHJy9fRj8UNO3JXutQ28qj2" && (
+          {currentUser.uid === "id_admin" && (
             <div className="d-flex mt-4">
-              <div><BiAddToQueue style={{ fontSize: "20px", marginLeft:"40px", cursor:"pointer"}}  onClick={handleChannel} /></div> <p style={{marginLeft:"18px", fontStyle:"italic"}}>Adaugă o cameră de chat</p>
+              <div>
+                <BiAddToQueue
+                  style={{
+                    fontSize: "20px",
+                    marginLeft: "40px",
+                    cursor: "pointer",
+                  }}
+                  onClick={handleChannel}
+                />
+              </div>{" "}
+              <p style={{ marginLeft: "18px", fontStyle: "italic" }}>
+                Adaugă o cameră de chat
+              </p>
             </div>
           )}
         </div>

@@ -16,7 +16,7 @@ application.get("/users", async (req, res, next) => {
   try {
     const records = await User.findAll();
     const count = await User.count();
-    
+
     if (records.length > 0) {
       //res.sendStatus(200).json(records);
 

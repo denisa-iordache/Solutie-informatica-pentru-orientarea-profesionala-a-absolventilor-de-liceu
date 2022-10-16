@@ -149,7 +149,7 @@ export default function AdminPage() {
   const handleShowSpecializationAdd = () => setShowSpecializationAdd(true);
 
   const getComments = () => {
-    fetch(`http://localhost:8080/comments`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/comments`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -159,7 +159,7 @@ export default function AdminPage() {
   };
 
   const getRegions = () => {
-    fetch(`http://localhost:8080/regions`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regions`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -169,7 +169,7 @@ export default function AdminPage() {
   };
 
   const getRegion = (id) => {
-    fetch(`http://localhost:8080/regions/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regions/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -183,7 +183,7 @@ export default function AdminPage() {
       nume: nameRef.current.value,
     };
 
-    fetch(`http://localhost:8080/regions/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regions/${id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -197,7 +197,7 @@ export default function AdminPage() {
       nume: nameRefAdd.current.value,
     };
 
-    fetch(`http://localhost:8080/regions`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regions`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -207,7 +207,7 @@ export default function AdminPage() {
   };
 
   const getDomains = () => {
-    fetch(`http://localhost:8080/domains`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domains`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -217,7 +217,7 @@ export default function AdminPage() {
   };
 
   const getDomain = (id) => {
-    fetch(`http://localhost:8080/domains/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domains/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -231,7 +231,7 @@ export default function AdminPage() {
       nume: nameRefDomain.current.value,
     };
 
-    fetch(`http://localhost:8080/domains/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domains/${id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -245,7 +245,7 @@ export default function AdminPage() {
       nume: nameRefDomainAdd.current.value,
     };
 
-    fetch(`http://localhost:8080/domains`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domains`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -255,7 +255,7 @@ export default function AdminPage() {
   };
 
   const getUniversities = () => {
-    fetch(`http://localhost:8080/universities`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universities`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -265,7 +265,7 @@ export default function AdminPage() {
   };
 
   const getUniversity = (id) => {
-    fetch(`http://localhost:8080/universities/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universities/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -280,7 +280,7 @@ export default function AdminPage() {
       statut: nameRefUniversityStatut.current.value,
     };
 
-    fetch(`http://localhost:8080/universities/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universities/${id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -295,7 +295,7 @@ export default function AdminPage() {
       statut: nameRefUniversityStatutAdd.current.value,
     };
 
-    fetch(`http://localhost:8080/universities`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universities`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -305,7 +305,7 @@ export default function AdminPage() {
   };
 
   const getCities = () => {
-    fetch(`http://localhost:8080/citiesRegions`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/citiesRegions`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -315,7 +315,7 @@ export default function AdminPage() {
   };
 
   const getCity = (id) => {
-    fetch(`http://localhost:8080/citiesRegions/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/citiesRegions/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -325,7 +325,7 @@ export default function AdminPage() {
   };
 
   const putCity = (id) => {
-    fetch(`http://localhost:8080/regionsName/${nameRefCityReg.current.value}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regionsName/${nameRefCityReg.current.value}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -338,7 +338,7 @@ export default function AdminPage() {
       id_regiune: regUpdate[0].id,
     };
 
-    fetch(`http://localhost:8080/citiesRegions/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/citiesRegions/${id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -349,7 +349,7 @@ export default function AdminPage() {
 
   const postCity = () => {
     fetch(
-      `http://localhost:8080/regionsName/${nameRefCityAddReg.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regionsName/${nameRefCityAddReg.current.value}`,
       {
         method: "GET",
       }
@@ -364,7 +364,7 @@ export default function AdminPage() {
       id_regiune: reg[0].id,
     };
 
-    fetch(`http://localhost:8080/citiesRegions`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/citiesRegions`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -374,7 +374,7 @@ export default function AdminPage() {
   };
 
   const getBranches = () => {
-    fetch(`http://localhost:8080/branchesDomain`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branchesDomain`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -384,7 +384,7 @@ export default function AdminPage() {
   };
 
   const getBranch = (id) => {
-    fetch(`http://localhost:8080/branchesDomain/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branchesDomain/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -395,7 +395,7 @@ export default function AdminPage() {
 
   const putBranch = (id) => {
     fetch(
-      `http://localhost:8080/domainName/${nameRefBranchDom.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domainName/${nameRefBranchDom.current.value}`,
       {
         method: "GET",
       }
@@ -410,7 +410,7 @@ export default function AdminPage() {
       id_domeniu: brUpdate[0].id,
     };
 
-    fetch(`http://localhost:8080/branchesDomain/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branchesDomain/${id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -421,7 +421,7 @@ export default function AdminPage() {
 
   const postBranch = () => {
     fetch(
-      `http://localhost:8080/domainName/${nameRefBranchAddDom.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domainName/${nameRefBranchAddDom.current.value}`,
       {
         method: "GET",
       }
@@ -436,7 +436,7 @@ export default function AdminPage() {
       id_domeniu: br[0].id,
     };
 
-    fetch(`http://localhost:8080/branchesDomain`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branchesDomain`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -446,7 +446,7 @@ export default function AdminPage() {
   };
 
   const getSpecializationsTable = () => {
-    fetch(`http://localhost:8080/specializationsFacRam`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsFacRam`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -456,7 +456,7 @@ export default function AdminPage() {
   };
 
   const getSpecialization = (id) => {
-    fetch(`http://localhost:8080/specializationsFacRam/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsFacRam/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -467,7 +467,7 @@ export default function AdminPage() {
 
   const putSpecialization = (id) => {
     fetch(
-      `http://localhost:8080/universityName/${nameRefSpecializationUniv.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universityName/${nameRefSpecializationUniv.current.value}`,
       {
         method: "GET",
       }
@@ -477,7 +477,7 @@ export default function AdminPage() {
         setUnivSUpdate(data);
       });
     fetch(
-      `http://localhost:8080/facultyName/${nameRefSpecializationFac.current.value}/${univSUpdate[0].id}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/facultyName/${nameRefSpecializationFac.current.value}/${univSUpdate[0].id}`,
       {
         method: "GET",
       }
@@ -488,7 +488,7 @@ export default function AdminPage() {
       });
 
     fetch(
-      `http://localhost:8080/branchName/${nameRefSpecializationRam.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branchName/${nameRefSpecializationRam.current.value}`,
       {
         method: "GET",
       }
@@ -508,7 +508,7 @@ export default function AdminPage() {
       id_ramura: ramUpdate[0].id,
     };
 
-    fetch(`http://localhost:8080/specializationsFacRam/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsFacRam/${id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -519,7 +519,7 @@ export default function AdminPage() {
 
   const postSpecialization = () => {
     fetch(
-      `http://localhost:8080/universityName/${nameRefSpecializationUnivAdd.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universityName/${nameRefSpecializationUnivAdd.current.value}`,
       {
         method: "GET",
       }
@@ -529,7 +529,7 @@ export default function AdminPage() {
         setUnivS(data);
       });
     fetch(
-      `http://localhost:8080/facultyName/${nameRefSpecializationFacAdd.current.value}/${univS[0].id}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/facultyName/${nameRefSpecializationFacAdd.current.value}/${univS[0].id}`,
       {
         method: "GET",
       }
@@ -540,7 +540,7 @@ export default function AdminPage() {
       });
 
     fetch(
-      `http://localhost:8080/branchName/${nameRefSpecializationRamAdd.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branchName/${nameRefSpecializationRamAdd.current.value}`,
       {
         method: "GET",
       }
@@ -560,7 +560,7 @@ export default function AdminPage() {
       id_ramura: ram[0].id,
     };
 
-    fetch(`http://localhost:8080/specializationsFacRam`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsFacRam`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -570,7 +570,7 @@ export default function AdminPage() {
   };
 
   const getFaculties = () => {
-    fetch(`http://localhost:8080/facultyUnivCity`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/facultyUnivCity`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -580,7 +580,7 @@ export default function AdminPage() {
   };
 
   const getFaculty = (id) => {
-    fetch(`http://localhost:8080/facultyUnivCity/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/facultyUnivCity/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -591,7 +591,7 @@ export default function AdminPage() {
 
   const putFaculty = (id) => {
     fetch(
-      `http://localhost:8080/universityName/${nameRefFacultyUniv.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universityName/${nameRefFacultyUniv.current.value}`,
       {
         method: "GET",
       }
@@ -602,7 +602,7 @@ export default function AdminPage() {
       });
 
     fetch(
-      `http://localhost:8080/cityName/${nameRefFacultyCity.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/cityName/${nameRefFacultyCity.current.value}`,
       {
         method: "GET",
       }
@@ -620,7 +620,7 @@ export default function AdminPage() {
       id_oras: citUpdate[0].id,
     };
 
-    fetch(`http://localhost:8080/facultyUnivCity/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/facultyUnivCity/${id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -631,7 +631,7 @@ export default function AdminPage() {
 
   const postFaculty = () => {
     fetch(
-      `http://localhost:8080/universityName/${nameRefFacultyAddUniv.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universityName/${nameRefFacultyAddUniv.current.value}`,
       {
         method: "GET",
       }
@@ -642,7 +642,7 @@ export default function AdminPage() {
       });
 
     fetch(
-      `http://localhost:8080/cityName/${nameRefFacultyAddCity.current.value}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/cityName/${nameRefFacultyAddCity.current.value}`,
       {
         method: "GET",
       }
@@ -660,7 +660,7 @@ export default function AdminPage() {
       id_oras: cit[0].id,
     };
 
-    fetch(`http://localhost:8080/facultyUnivCity`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/facultyUnivCity`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -670,49 +670,49 @@ export default function AdminPage() {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:8080/comments/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/comments/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
   };
 
   const handleDeleteRegions = (id) => {
-    fetch(`http://localhost:8080/regions/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regions/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
   };
 
   const handleDeleteDomains = (id) => {
-    fetch(`http://localhost:8080/domains/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domains/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
   };
 
   const handleDeleteUniversities = (id) => {
-    fetch(`http://localhost:8080/universities/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universities/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
   };
 
   const handleDeleteCities = (id) => {
-    fetch(`http://localhost:8080/cities/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/cities/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
   };
 
   const handleDeleteBranches = (id) => {
-    fetch(`http://localhost:8080/branches/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branches/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
   };
 
   const handleDeleteFaculties = (id) => {
-    fetch(`http://localhost:8080/facultyUnivCity/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/facultyUnivCity/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
   };
 
   const handleDeleteSpecializations = (id) => {
-    fetch(`http://localhost:8080/specializationsFacRam/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsFacRam/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
   };
@@ -721,7 +721,7 @@ export default function AdminPage() {
     const postData = {
       status: "Aprobat",
     };
-    fetch(`http://localhost:8080/comments/${id}`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/comments/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -88,7 +88,7 @@ function Specializations() {
     page
   ) => {
     fetch(
-      `http://localhost:8080/specializationsTotal?${filterString}=${
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotal?${filterString}=${
         filter || ""
       }&sortField=${sortField || ""}&sortOrder=${
         sortOrder || ""
@@ -106,7 +106,7 @@ function Specializations() {
 
   const getSpecializationsRegions = (id, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotal/${id}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotal/${id}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -120,7 +120,7 @@ function Specializations() {
 
   const getSpecializationsCities = (id, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalOras/${id}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalOras/${id}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -134,7 +134,7 @@ function Specializations() {
 
   const getSpecializationsUniversities = (id, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalUniversitate/${id}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalUniversitate/${id}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -148,7 +148,7 @@ function Specializations() {
 
   const getSpecializationsFaculties = (id, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalFacultate/${id}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalFacultate/${id}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -162,7 +162,7 @@ function Specializations() {
 
   const getSpecializationsDomains = (id, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalDomeniu/${id}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalDomeniu/${id}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -176,7 +176,7 @@ function Specializations() {
 
   const getSpecializationsBranches = (id, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalRamura/${id}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalRamura/${id}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -190,7 +190,7 @@ function Specializations() {
 
   const getSpecializationsStatut = (id, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalStatut/${id}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalStatut/${id}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -204,7 +204,7 @@ function Specializations() {
 
   const getSpecializationsLB = (lb, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalLB/${lb}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalLB/${lb}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -218,7 +218,7 @@ function Specializations() {
 
   const getSpecializationsLT = (lb, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalLT/${lb}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalLT/${lb}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -232,7 +232,7 @@ function Specializations() {
 
   const getSpecializationsUMB = (lb, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalUMB/${lb}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalUMB/${lb}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -246,7 +246,7 @@ function Specializations() {
 
   const getSpecializationsUMT = (lb, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalUMT/${lb}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalUMT/${lb}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -260,7 +260,7 @@ function Specializations() {
 
   const getSpecializationsTA = (lb, page) => {
     fetch(
-      `http://localhost:8080/specializationsTotalTA/${lb}/?page=${page}&pageSize=${11}`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotalTA/${lb}/?page=${page}&pageSize=${11}`,
       {
         method: "GET",
       }
@@ -279,7 +279,7 @@ function Specializations() {
   });
 
   const getRegions = () => {
-    fetch(`http://localhost:8080/regions`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regions`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -289,7 +289,7 @@ function Specializations() {
   };
 
   const getUniversities = () => {
-    fetch(`http://localhost:8080/universities`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universities`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -299,7 +299,7 @@ function Specializations() {
   };
 
   const getDomains = () => {
-    fetch(`http://localhost:8080/domains`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domains`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -309,7 +309,7 @@ function Specializations() {
   };
 
   const getCities = () => {
-    fetch(`http://localhost:8080/cities`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/cities`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -319,7 +319,7 @@ function Specializations() {
   };
 
   const getFaculties = () => {
-    fetch(`http://localhost:8080/faculties`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/faculties`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -329,7 +329,7 @@ function Specializations() {
   };
 
   const getBranches = () => {
-    fetch(`http://localhost:8080/branches`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branches`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -348,7 +348,7 @@ function Specializations() {
     let checkbox = document.getElementById(id);
     if (checkbox.checked == true) {
       // fetch(
-      //   `http://localhost:8080/specializationsTotal/${id}/?page=${page}&pageSize=${11}`,
+      //   `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specializationsTotal/${id}/?page=${page}&pageSize=${11}`,
       //   {
       //     method: "GET",
       //   }
@@ -368,7 +368,7 @@ function Specializations() {
       setIdStatut("");
       setIdRegion(id);
 
-      fetch(`http://localhost:8080/regions/${id}/citiesRegions`, {
+      fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regions/${id}/citiesRegions`, {
         method: "GET",
       })
         .then((res) => res.json())
@@ -408,7 +408,7 @@ function Specializations() {
       setIdUniversity("");
       setIdStatut("");
       setIdUniversity(id);
-      fetch(`http://localhost:8080/universities/${id}/facultiesUniversities`, {
+      fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universities/${id}/facultiesUniversities`, {
         method: "GET",
       })
         .then((res) => res.json())
@@ -447,7 +447,7 @@ function Specializations() {
       setIdUniversity("");
       setIdStatut("");
       setIdDomain(id);
-      fetch(`http://localhost:8080/domains/${id}/branchesDomains`, {
+      fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domains/${id}/branchesDomains`, {
         method: "GET",
       })
         .then((res) => res.json())
@@ -717,7 +717,7 @@ function Specializations() {
   };
 
   const getCommentsFilteredBySpecialization = (id) => {
-    fetch(`http://localhost:8080/specialization/${id}/comments`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specialization/${id}/comments`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -728,7 +728,7 @@ function Specializations() {
 
   const getCommentsFilteredBySpecializationAndParent = (id, parent) => {
     fetch(
-      `http://localhost:8080/specialization/${id}/parent/${parent}/comments`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specialization/${id}/parent/${parent}/comments`,
       {
         method: "GET",
       }
@@ -741,7 +741,7 @@ function Specializations() {
 
   const getCommentsFilteredBySpecializationAndParentLvl2 = (id, parent) => {
     fetch(
-      `http://localhost:8080/specialization/${id}/parent/${parent}/comments`,
+      `${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specialization/${id}/parent/${parent}/comments`,
       {
         method: "GET",
       }
@@ -841,7 +841,7 @@ function Specializations() {
                             }
                           />
                         </Form.Group>
-                        {currentUser.email === "nodemailerpopescu@gmail.com" ? (
+                        {currentUser.email === "email_admin" ? (
                           <Button
                             variant="primary"
                             className="btn btn-primary btn-sm"
@@ -1026,7 +1026,7 @@ function Specializations() {
                             onChange={(e) => setCommentResponse(e.target.value)}
                           />
                         </Form.Group>
-                        {currentUser.email === "nodemailerpopescu@gmail.com" ? (
+                        {currentUser.email === "email_admin" ? (
                           <Button
                             variant="primary"
                             className="btn btn-primary btn-sm"
@@ -1680,7 +1680,7 @@ function Specializations() {
       autor: user_email,
       parinte: null,
     };
-    fetch(`http://localhost:8080/specialization/${id_specializare}/comments`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specialization/${id_specializare}/comments`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -1702,7 +1702,7 @@ function Specializations() {
       autor: user_email,
       parinte: parinte,
     };
-    fetch(`http://localhost:8080/specialization/${id_specializare}/comments`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/specialization/${id_specializare}/comments`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

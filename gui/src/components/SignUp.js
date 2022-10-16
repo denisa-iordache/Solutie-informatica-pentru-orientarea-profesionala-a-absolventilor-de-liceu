@@ -46,7 +46,7 @@ export default function SignUp() {
           };
           console.log(postData);
 
-          fetch(`http://localhost:8080/users`, {
+          fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/users`, {
             method: "post",
             headers: {
               "Content-Type": "application/json",
@@ -83,7 +83,7 @@ export default function SignUp() {
         };
         console.log(postData);
 
-        fetch(`http://localhost:8080/users`, {
+        fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/users`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
@@ -101,81 +101,95 @@ export default function SignUp() {
   return (
     <>
       <Header />
-      <div style={{ position:"relative", zIndex:"1", marginBottom:"100px", backgroundColor:"white"}} className="shadow-lg">
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
+      <div
+        style={{
+          position: "relative",
+          zIndex: "1",
+          marginBottom: "100px",
+          backgroundColor: "white",
+        }}
+        className="shadow-lg"
       >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <Card style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}>
-            <Card.Body>
-              <h2 className="text-center">Creează un cont</h2>
-              {error && <Alert variant="danger">{error}</Alert>}
-              <Form onSubmit={handleSubmit}>
-                <Form.Group id="name">
-                  <Form.Label>Nume</Form.Label>
-                  <Form.Control type="text" ref={nameRef}></Form.Control>
-                </Form.Group>
-                <Form.Group id="surname">
-                  <Form.Label>Prenume</Form.Label>
-                  <Form.Control type="text" ref={surnameRef}></Form.Control>
-                </Form.Group>
-                <Form.Group id="username">
-                  <Form.Label>Nume de utilizator</Form.Label>
-                  <Form.Control type="text" ref={usernameRef}></Form.Control>
-                </Form.Group>
-                <Form.Group id="email">
-                  <Form.Label className="d-flex flex-row">
-                  Adresă de email
-                    <span style={{ color: "red", marginLeft: "3px" }}>*</span>
-                  </Form.Label>
-                  <Form.Control
-                    type="email"
-                    ref={emailRef}
-                    required
-                  ></Form.Control>
-                </Form.Group>
-                <Form.Group id="password">
-                  <Form.Label className="d-flex">
-                    Parolă
-                    <span style={{ color: "red", marginLeft: "3px" }}>*</span>
-                  </Form.Label>
-                  <Form.Control
-                    type="password"
-                    ref={passwordRef}
-                    required
-                  ></Form.Control>
-                </Form.Group>
-                <Form.Group id="password-confirm">
-                  <Form.Label className="d-flex">
-                    Confirmare parolă
-                    <span style={{ color: "red", marginLeft: "3px" }}>*</span>
-                  </Form.Label>
-                  <Form.Control
-                    type="password"
-                    ref={passwordConfirmRef}
-                    required
-                  ></Form.Control>
-                </Form.Group>
-                <Button disabled={loading} className="w-100 mt-2" type="submit">
-                  Înregistrează-te
-                </Button>
-                <div className="mt-1" style={{ textAlign: "center" }}>
-                  <span>sau</span>
-                </div>
-                <GoogleButton
-                  className="g-btn w-100 mt-1"
-                  type="dark"
-                  onClick={handleGoogleSignIn}
-                />
-              </Form>
-            </Card.Body>
-          </Card>
-          <div className="w-100 text-center mt-1">
-            Ai deja un cont? <a href="/loginPage">Autentifică-te în cont</a>
+        <Container
+          className="d-flex align-items-center justify-content-center"
+          style={{ minHeight: "100vh" }}
+        >
+          <div className="w-100" style={{ maxWidth: "400px" }}>
+            <Card
+              style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}
+            >
+              <Card.Body>
+                <h2 className="text-center">Creează un cont</h2>
+                {error && <Alert variant="danger">{error}</Alert>}
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group id="name">
+                    <Form.Label>Nume</Form.Label>
+                    <Form.Control type="text" ref={nameRef}></Form.Control>
+                  </Form.Group>
+                  <Form.Group id="surname">
+                    <Form.Label>Prenume</Form.Label>
+                    <Form.Control type="text" ref={surnameRef}></Form.Control>
+                  </Form.Group>
+                  <Form.Group id="username">
+                    <Form.Label>Nume de utilizator</Form.Label>
+                    <Form.Control type="text" ref={usernameRef}></Form.Control>
+                  </Form.Group>
+                  <Form.Group id="email">
+                    <Form.Label className="d-flex flex-row">
+                      Adresă de email
+                      <span style={{ color: "red", marginLeft: "3px" }}>*</span>
+                    </Form.Label>
+                    <Form.Control
+                      type="email"
+                      ref={emailRef}
+                      required
+                    ></Form.Control>
+                  </Form.Group>
+                  <Form.Group id="password">
+                    <Form.Label className="d-flex">
+                      Parolă
+                      <span style={{ color: "red", marginLeft: "3px" }}>*</span>
+                    </Form.Label>
+                    <Form.Control
+                      type="password"
+                      ref={passwordRef}
+                      required
+                    ></Form.Control>
+                  </Form.Group>
+                  <Form.Group id="password-confirm">
+                    <Form.Label className="d-flex">
+                      Confirmare parolă
+                      <span style={{ color: "red", marginLeft: "3px" }}>*</span>
+                    </Form.Label>
+                    <Form.Control
+                      type="password"
+                      ref={passwordConfirmRef}
+                      required
+                    ></Form.Control>
+                  </Form.Group>
+                  <Button
+                    disabled={loading}
+                    className="w-100 mt-2"
+                    type="submit"
+                  >
+                    Înregistrează-te
+                  </Button>
+                  <div className="mt-1" style={{ textAlign: "center" }}>
+                    <span>sau</span>
+                  </div>
+                  <GoogleButton
+                    className="g-btn w-100 mt-1"
+                    type="dark"
+                    onClick={handleGoogleSignIn}
+                  />
+                </Form>
+              </Card.Body>
+            </Card>
+            <div className="w-100 text-center mt-1">
+              Ai deja un cont? <a href="/loginPage">Autentifică-te în cont</a>
+            </div>
           </div>
-        </div>
-      </Container>
+        </Container>
       </div>
       <Footer />
     </>

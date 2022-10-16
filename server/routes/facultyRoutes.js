@@ -13,7 +13,10 @@ const Faculty = require("../models/faculty");
 
 application.get("/facultyName/:name/:id_univ", async (req, res, next) => {
   try {
-    const regions = await sequelize.query(`SELECT * FROM faculties where nume='${req.params.name}' and id_universitate=${req.params.id_univ}`, { type: QueryTypes.SELECT });
+    const regions = await sequelize.query(
+      `SELECT * FROM faculties where nume='${req.params.name}' and id_universitate=${req.params.id_univ}`,
+      { type: QueryTypes.SELECT }
+    );
     if (regions.length > 0) {
       res.json(regions);
     } else {
@@ -96,7 +99,7 @@ application.put("/facultyUnivCity/:id", async (req, res, next) => {
 /**
  * GET - afisare facultati
  */
- application.get("/faculties", async (request, response, next) => {
+application.get("/faculties", async (request, response, next) => {
   try {
     const movies = await Faculty.findAll();
     if (movies.length > 0) {
@@ -110,39 +113,42 @@ application.put("/facultyUnivCity/:id", async (req, res, next) => {
   }
 });
 
-application.get("/universities/:universityName/facultiesUniversities", async (req, res, next) => {
-  try {
-    const faculties = await sequelize.query(`SELECT * FROM facultiesUniversities where universitate='${req.params.universityName}'`, { type: QueryTypes.SELECT });
-    if (faculties.length > 0) {
-      res.json(faculties);
-    } else {
-      res.sendStatus(204);
-    }
-  } catch (err) {
-    next(err);
-  }
-});
-
-/**
- * GET - preluarea unei anumite facultati dintr-un anumit oras
- */
 application.get(
-  "/faculties/:facultyId",
+  "/universities/:universityName/facultiesUniversities",
   async (req, res, next) => {
     try {
-      const faculty = await Faculty.findByPk(req.params.facultyId);
-      if (faculty) {
-        res.status(200).json(faculty);
+      const faculties = await sequelize.query(
+        `SELECT * FROM facultiesUniversities where universitate='${req.params.universityName}'`,
+        { type: QueryTypes.SELECT }
+      );
+      if (faculties.length > 0) {
+        res.json(faculties);
       } else {
-        res.status(404).json({
-          error: `Facultatea cu id-ul ${req.params.facultyId} nu a fost gasit!`,
-        });
+        res.sendStatus(204);
       }
     } catch (err) {
       next(err);
     }
   }
 );
+
+/**
+ * GET - preluarea unei anumite facultati dintr-un anumit oras
+ */
+application.get("/faculties/:facultyId", async (req, res, next) => {
+  try {
+    const faculty = await Faculty.findByPk(req.params.facultyId);
+    if (faculty) {
+      res.status(200).json(faculty);
+    } else {
+      res.status(404).json({
+        error: `Facultatea cu id-ul ${req.params.facultyId} nu a fost gasit!`,
+      });
+    }
+  } catch (err) {
+    next(err);
+  }
+});
 
 /**
  * POST - adaugare facultate in universitate si oras.

@@ -12,7 +12,10 @@ const BranchOfScience = require("../models/branchOfScience");
 
 application.get("/branchName/:name", async (req, res, next) => {
   try {
-    const regions = await sequelize.query(`SELECT * FROM branchOfSciences where nume='${req.params.name}'`, { type: QueryTypes.SELECT });
+    const regions = await sequelize.query(
+      `SELECT * FROM branchOfSciences where nume='${req.params.name}'`,
+      { type: QueryTypes.SELECT }
+    );
     if (regions.length > 0) {
       res.json(regions);
     } else {
@@ -112,33 +115,44 @@ application.get("/branches", async (request, response, next) => {
 /**
  * GET - preluarea unei anumite ramuri dintr-un anumit domeniu
  */
-application.get("/branchesOfScience/:branchOfScienceId", async (req, res, next) => {
-  try {
-    const branch = await BranchOfScience.findByPk(req.params.branchOfScienceId);
-    if (branch) {
-      res.status(200).json(branch);
-    } else {
-      res.status(404).json({
-        error: `Universitatea cu id-ul ${req.params.branchOfScienceId} nu a fost gasita!`,
-      });
+application.get(
+  "/branchesOfScience/:branchOfScienceId",
+  async (req, res, next) => {
+    try {
+      const branch = await BranchOfScience.findByPk(
+        req.params.branchOfScienceId
+      );
+      if (branch) {
+        res.status(200).json(branch);
+      } else {
+        res.status(404).json({
+          error: `Universitatea cu id-ul ${req.params.branchOfScienceId} nu a fost gasita!`,
+        });
+      }
+    } catch (err) {
+      next(err);
     }
-  } catch (err) {
-    next(err);
   }
-});
+);
 
-application.get("/domains/:domainName/branchesDomains", async (req, res, next) => {
-  try {
-    const branches = await sequelize.query(`SELECT * FROM branchesDomains where domeniu='${req.params.domainName}'`, { type: QueryTypes.SELECT });
-    if (branches.length > 0) {
-      res.json(branches);
-    } else {
-      res.sendStatus(204);
+application.get(
+  "/domains/:domainName/branchesDomains",
+  async (req, res, next) => {
+    try {
+      const branches = await sequelize.query(
+        `SELECT * FROM branchesDomains where domeniu='${req.params.domainName}'`,
+        { type: QueryTypes.SELECT }
+      );
+      if (branches.length > 0) {
+        res.json(branches);
+      } else {
+        res.sendStatus(204);
+      }
+    } catch (err) {
+      next(err);
     }
-  } catch (err) {
-    next(err);
   }
-});
+);
 
 /**
  * POST - adaugare ramura la domeniu.
@@ -197,37 +211,6 @@ application.put(
 /**
  * DELETE - stergere ramura din domeniu
  */
-// application.delete(
-//   "/domains/:domainId/branchesOfScience/:branchOfScienceId",
-//   async (request, response, next) => {
-//     try {
-//       const domain = await Domain.findByPk(request.params.domainId);
-//       if (domain) {
-//         const branchesOfScience = await domain.getBranchOfSciences({
-//           where: { id: request.params.branchOfScienceId },
-//         });
-//         const branchOfScience = branchesOfScience.shift();
-//         if (branchOfScience) {
-//           await branchOfScience.destroy();
-//           response.status(200).json({
-//             message: `Ramura cu id-ul ${request.params.branchOfScienceId} a fost stearsa!`,
-//           });
-//         } else {
-//           response.status(404).json({
-//             error: `Ramura cu id-ul ${request.params.branchOfScienceId} nu a fost gasita!`,
-//           });
-//         }
-//       } else {
-//         response.status(404).json({
-//           error: `Ramura cu id-ul ${request.params.branchOfScienceId} nu a fost gasita!`,
-//         });
-//       }
-//     } catch (error) {
-//       next(error);
-//     }
-//   }
-// );
-
 application.delete("/branches/:id", async (req, res, next) => {
   try {
     const domain = await BranchOfScience.findByPk(req.params.id);

@@ -27,7 +27,10 @@ application.get("/universities", async (request, response, next) => {
 
 application.get("/universityName/:name", async (req, res, next) => {
   try {
-    const regions = await sequelize.query(`SELECT * FROM universities where nume='${req.params.name}'`, { type: QueryTypes.SELECT });
+    const regions = await sequelize.query(
+      `SELECT * FROM universities where nume='${req.params.name}'`,
+      { type: QueryTypes.SELECT }
+    );
     if (regions.length > 0) {
       res.json(regions);
     } else {

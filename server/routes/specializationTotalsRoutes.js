@@ -12,20 +12,6 @@ const SpecializationsTotal = require("../models/specializationsTotal");
 /**
  * GET - afisare lista specializari complete.
  */
-//Operație GET pentru prima entitate - 0.3
-// application.get("/specializationsTotal", async (request, response, next) => {
-//   try {
-//     const specializations = await sequelize.query("SELECT * FROM specializationsTotals", { type: QueryTypes.SELECT });
-//     if (specializations.length > 0) {
-//       response.json(specializations);
-//     } else {
-//       response.sendStatus(204);
-//     }
-//   } catch (error) {
-//     next(error);
-//   }
-// });
-
 application.get("/specializationsTotal", async (request, response, next) => {
   try {
     const Op = require("sequelize").Op;
@@ -52,7 +38,7 @@ application.get("/specializationsTotal", async (request, response, next) => {
     if (filterKeys.length > 0) {
       query.where = {};
       for (const key of filterKeys) {
-        if (isNaN(request.query[key]) || request.query[key]==="") {
+        if (isNaN(request.query[key]) || request.query[key] === "") {
           query.where[key] = {
             [Op.like]: `%${request.query[key]}%`,
           };
@@ -112,7 +98,7 @@ application.get(
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: { regiune: request.params.regiune }
+        where: { regiune: request.params.regiune },
       });
       response.status(200).json({ records, count });
     } catch (e) {
@@ -157,7 +143,7 @@ application.get(
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: { oras: request.params.oras }
+        where: { oras: request.params.oras },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -186,7 +172,7 @@ application.get(
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: { universitate: request.params.universitate }
+        where: { universitate: request.params.universitate },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -215,7 +201,7 @@ application.get(
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: { facultate: request.params.facultate }
+        where: { facultate: request.params.facultate },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -244,7 +230,7 @@ application.get(
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: { domeniu: request.params.domeniu }
+        where: { domeniu: request.params.domeniu },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -273,7 +259,7 @@ application.get(
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: { ramura: request.params.ramura }
+        where: { ramura: request.params.ramura },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -321,7 +307,7 @@ application.get(
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: { statut: request.params.statut }
+        where: { statut: request.params.statut },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -347,15 +333,19 @@ application.get(
         query.offset = pageSize * parseInt(request.query.page); //->skip
       }
 
-      query.where = { numar_locuri_buget: {
-        [Op.lt]: request.params.lb
-      } };
+      query.where = {
+        numar_locuri_buget: {
+          [Op.lt]: request.params.lb,
+        },
+      };
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: {numar_locuri_buget: {
-          [Op.lt]: request.params.lb
-        } }
+        where: {
+          numar_locuri_buget: {
+            [Op.lt]: request.params.lb,
+          },
+        },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -381,15 +371,19 @@ application.get(
         query.offset = pageSize * parseInt(request.query.page); //->skip
       }
 
-      query.where = { numar_locuri_taxa: {
-        [Op.lt]: request.params.lt
-      } };
+      query.where = {
+        numar_locuri_taxa: {
+          [Op.lt]: request.params.lt,
+        },
+      };
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: {numar_locuri_taxa: {
-          [Op.lt]: request.params.lt
-        } }
+        where: {
+          numar_locuri_taxa: {
+            [Op.lt]: request.params.lt,
+          },
+        },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -415,15 +409,19 @@ application.get(
         query.offset = pageSize * parseInt(request.query.page); //->skip
       }
 
-      query.where = { ultima_medie_buget: {
-        [Op.lt]: request.params.umb
-      } };
+      query.where = {
+        ultima_medie_buget: {
+          [Op.lt]: request.params.umb,
+        },
+      };
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: {ultima_medie_buget: {
-          [Op.lt]: request.params.umb
-        } }
+        where: {
+          ultima_medie_buget: {
+            [Op.lt]: request.params.umb,
+          },
+        },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -449,15 +447,19 @@ application.get(
         query.offset = pageSize * parseInt(request.query.page); //->skip
       }
 
-      query.where = { ultima_medie_taxa: {
-        [Op.lt]: request.params.umt
-      } };
+      query.where = {
+        ultima_medie_taxa: {
+          [Op.lt]: request.params.umt,
+        },
+      };
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: {ultima_medie_taxa: {
-          [Op.lt]: request.params.umt
-        } }
+        where: {
+          ultima_medie_taxa: {
+            [Op.lt]: request.params.umt,
+          },
+        },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -483,15 +485,19 @@ application.get(
         query.offset = pageSize * parseInt(request.query.page); //->skip
       }
 
-      query.where = { taxa_anuala: {
-        [Op.lt]: request.params.ta
-      } };
+      query.where = {
+        taxa_anuala: {
+          [Op.lt]: request.params.ta,
+        },
+      };
 
       const records = await SpecializationsTotal.findAll(query);
       const count = await SpecializationsTotal.count({
-        where: {taxa_anuala: {
-          [Op.lt]: request.params.ta
-        } }
+        where: {
+          taxa_anuala: {
+            [Op.lt]: request.params.ta,
+          },
+        },
       });
       response.status(200).json({ records, count });
     } catch (error) {
@@ -518,19 +524,5 @@ application.get(
     }
   }
 );
-
-// application.get("/specializationsTotals/:regiune?/:oras?/:universitate?/:facultate?/:domeniu?/:ramura?", async (request, response, next) => {
-//   try {
-//     const specializations = await sequelize.query(`SELECT * FROM specializationsTotals where regiune='${request.params.regiune}
-//     or oras='${request.params.oras} or universitate='${request.params.universitate} or facultate='${request.params.facultate} or domeniu='${request.params.domeniu} or ramura='${request.params.ramura}'`, { type: QueryTypes.SELECT });
-//     if (specializations.length > 0) {
-//       response.json(specializations);
-//     } else {
-//       response.sendStatus(204);
-//     }
-//   } catch (error) {
-//     next(error);
-//   }
-// });
 
 module.exports = application;

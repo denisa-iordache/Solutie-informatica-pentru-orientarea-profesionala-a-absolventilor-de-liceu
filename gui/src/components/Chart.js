@@ -46,7 +46,7 @@ function Chart(props) {
 
   return (
     <>
-        <Bar options={options} data={data} />
+      <Bar options={options} data={data} />
     </>
   );
 }

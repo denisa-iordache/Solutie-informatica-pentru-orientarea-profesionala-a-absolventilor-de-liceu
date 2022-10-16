@@ -27,4 +27,3 @@ export default function SidebarChannel({ id, channelName }) {
     </div>
   );
 }
-

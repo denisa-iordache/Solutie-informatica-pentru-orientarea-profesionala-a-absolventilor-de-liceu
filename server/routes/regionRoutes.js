@@ -12,59 +12,6 @@ const Region = require("../models/region");
 /**
  * GET - afisare lista regiuni.
  */
-// application.get("/regions", async (request, response, next) => {
-//   try {
-//     const Op = require("sequelize").Op;
-//     const query = {};
-//     let pageSize = 2;
-//     const allowedFilters = ["denumire_regiune"];
-//     const filterKeys = Object.keys(request.query).filter(
-//       (e) => allowedFilters.indexOf(e) !== -1
-//     );
-//     if (filterKeys.length > 0) {
-//       query.where = {};
-//       for (const key of filterKeys) {
-//         //if (isNaN(request.query[key]) == true) {
-//         query.where[key] = {
-//           [Op.like]: `%${request.query[key]}%`,
-//         };
-//         //}
-//       }
-//     }
-
-//     //const sortField = request.query.sortField;
-//     const sortField = "denumire_regiune";
-//     let sortOrder = "ASC";
-//     if (request.query.sortOrder && request.query.sortOrder === "-1") {
-//       sortOrder = "DESC";
-//     }
-
-//     if (request.query.pageSize) {
-//       pageSize = parseInt(request.query.pageSize);
-//     }
-
-//     if (sortField) {
-//       query.order = [[sortField, sortOrder]];
-//     }
-
-//     if (!isNaN(parseInt(request.query.page))) {
-//       query.limit = pageSize; //->limit
-//       query.offset = pageSize * parseInt(request.query.page); //->skip
-//     }
-
-//     const records = await Region.findAll(query);
-//     const count = await Region.count();
-//     response.status(200).json({ records, count });
-//   } catch (e) {
-//     console.warn(e);
-//     response.status(500).json({ message: "server error" });
-//   }
-// });
-
-/**
- * GET - afisare lista regiuni.
- */
-//Operație GET pentru prima entitate - 0.3
 application.get("/regions", async (request, response, next) => {
   try {
     const regions = await Region.findAll();
@@ -98,7 +45,10 @@ application.get("/regions/:regionId", async (req, res, next) => {
 
 application.get("/regionsName/:name", async (req, res, next) => {
   try {
-    const regions = await sequelize.query(`SELECT * FROM regions where nume='${req.params.name}'`, { type: QueryTypes.SELECT });
+    const regions = await sequelize.query(
+      `SELECT * FROM regions where nume='${req.params.name}'`,
+      { type: QueryTypes.SELECT }
+    );
     if (regions.length > 0) {
       res.json(regions);
     } else {

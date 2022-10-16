@@ -11,7 +11,7 @@ export default function Filters() {
   const [branches, setBranches] = useState(null);
 
   const getRegions = () => {
-    fetch(`http://localhost:8080/regions`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/regions`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -21,7 +21,7 @@ export default function Filters() {
   };
 
   const getUniversities = () => {
-    fetch(`http://localhost:8080/universities`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/universities`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -31,7 +31,7 @@ export default function Filters() {
   };
 
   const getDomains = () => {
-    fetch(`http://localhost:8080/domains`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/domains`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -41,7 +41,7 @@ export default function Filters() {
   };
 
   const getCities = () => {
-    fetch(`http://localhost:8080/cities`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/cities`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -51,7 +51,7 @@ export default function Filters() {
   };
 
   const getFaculties = () => {
-    fetch(`http://localhost:8080/faculties`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/faculties`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -61,7 +61,7 @@ export default function Filters() {
   };
 
   const getBranches = () => {
-    fetch(`http://localhost:8080/branches`, {
+    fetch(`${`${window.location.protocol}//${window.location.hostname}:${window.location.port}`}/branches`, {
       method: "GET",
     })
       .then((res) => res.json())

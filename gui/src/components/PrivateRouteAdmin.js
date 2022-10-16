@@ -6,7 +6,7 @@ import { useAuthentication } from "../context/AuthenticationContext";
 export default function PrivateRouteAdmin({ children }) {
   const { currentUser } = useAuthentication();
 
-  return currentUser && currentUser.email == "denisaiordache550@gmail.com" ? (
+  return currentUser && currentUser.email == "email_admin" ? (
     children
   ) : (
     <Navigate to="/" />

@@ -1,9 +1,8 @@
 import React from "react";
 import { AuthenticationProvider } from "../context/AuthenticationContext";
 import SignUp from "./SignUp";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./Dashboard";
-// import LogIn from "./LogIn";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./ForgotPassword";
 import UpdatePofile from "./UpdatePofile";

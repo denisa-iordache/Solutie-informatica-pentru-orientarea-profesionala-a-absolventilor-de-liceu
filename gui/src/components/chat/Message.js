@@ -20,7 +20,7 @@ export default function Message({ timestamp, message, user }) {
         }}
       />
       <div style={{ marginLeft: "20px" }}>
-        {user.userEmail === "nodemailerpopescu@gmail.com" ? (
+        {user.userEmail === "email_admin" ? (
           <h6>
             Admin
             <span

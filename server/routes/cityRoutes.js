@@ -12,7 +12,10 @@ const Region = require("../models/region");
 
 application.get("/cityName/:name", async (req, res, next) => {
   try {
-    const regions = await sequelize.query(`SELECT * FROM cities where nume='${req.params.name}'`, { type: QueryTypes.SELECT });
+    const regions = await sequelize.query(
+      `SELECT * FROM cities where nume='${req.params.name}'`,
+      { type: QueryTypes.SELECT }
+    );
     if (regions.length > 0) {
       res.json(regions);
     } else {
@@ -70,7 +73,6 @@ application.put("/citiesRegions/:id", async (req, res, next) => {
     next(err);
   }
 });
-
 
 application.get("/citiesRegions", async (req, res, next) => {
   try {

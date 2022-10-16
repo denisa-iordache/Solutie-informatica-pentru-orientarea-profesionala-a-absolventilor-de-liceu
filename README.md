@@ -8,7 +8,7 @@
 Aplicația este compusă din 7 pagini diferite: „Acasă”, „Creează un cont”, „Intră în cont”, pagina de profil, „Opțiuni universitare”, „Chestionar de orientare în carieră” și „Camere de chat”. De asemenea, este implementată responsive, având un aspect plăcut și practic și pe mobil, motiv pentru care unele din următoarele figuri o să fie inserate și utilizând vizualizarea pentru mobil. <br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028801-fbbca7af-4aaf-4a0a-a7e9-9d07f954bd53.png)
 Pe pagina „Acasă” sunt prezentate într-o componentă de tip Carousel funcționalitățile oferite de platformă pentru utilizator. <br/>
-![image](https://user-images.githubusercontent.com/74931542/196028826-ce3b5224-0721-4da0-9c77-9d11d463fa57.png)
+![image](https://user-images.githubusercontent.com/74931542/196028826-ce3b5224-0721-4da0-9c77-9d11d463fa57.png) <br/>
 În pagina de creare a contului utilizatorul poate crea un cont în mod clasic, prin introducerea datelor solicitate sau se poate autentifica folosind un cont Google. Pentru autentificarea unui utilizator existent sunt solicitate doar emailul și parola, sau, de asemenea, se poate autentifica folosind Google. În cazul în care utilizatorul uită parola aferentă contului său, poate accesa opțiunea „Forgot password?”, iar în formularul generat dacă introduce adresa de email, i se va genera un email cu un link de resetare a parolei. <br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028905-c7de20ff-040d-4cf5-a765-fb9f190be6cb.png)
 ![image](https://user-images.githubusercontent.com/74931542/196028942-a7057bcc-21de-4408-9c98-a4481feef3a4.png)

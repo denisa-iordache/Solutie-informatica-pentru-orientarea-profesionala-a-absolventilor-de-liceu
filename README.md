@@ -13,6 +13,7 @@
 • Pentru a nu depinde de internet, se pot descărca în format Excel specializările care fac parte din ramurile de studiu aferente rezultatului utilizatorului. <br/>
 • De asemenea, există camere de chat pentru fiecare ramură de studiu din România unde utilizatorii pot conversa între ei.
 ## Capturi de ecran din aplicație
+### Interfața cu utilizatorul
 Aplicația este compusă din 7 pagini diferite: „Acasă”, „Creează un cont”, „Intră în cont”, pagina de profil, „Opțiuni universitare”, „Chestionar de orientare în carieră” și „Camere de chat”. De asemenea, este responsive, având un aspect plăcut și practic și pe mobil, motiv pentru care unele din următoarele imagini o să fie inserate și utilizând vizualizarea pentru mobil. <br/> <br/>
 • Pe pagina „Acasă” sunt prezentate într-o componentă de tip Carousel funcționalitățile oferite de platformă pentru utilizator. <br/><br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028801-fbbca7af-4aaf-4a0a-a7e9-9d07f954bd53.png)
@@ -29,8 +30,25 @@ Aplicația este compusă din 7 pagini diferite: „Acasă”, „Creează un con
 • De asemenea, poate vizualiza rezultatele ultimei parcurgeri a chestionarului prin apăsarea butonului „Rezultate chestionar”, adică topul ramurilor de studii care i se potrivesc. <br/><br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028952-f7376aea-0b72-4dab-80bd-1f459251df3a.png)
 <br/><br/>
-• Pe pagina de rapoarte există un grafic cu bare unde fiecare bară reprezintă fiecare rezultat generat la chetionarul de orientare profesională și procentul utilizatorilor înscriși pe site care au obținut aceeași ramură printre ramurile din rezultatul său generat la finalul quiz-ului. <br/>
-Se pot descărca într-un fișier excel specializările din țară care fac parte din ramurile din rezultatul utilizatorului, fiecare ramură fiind pe câte o foaie separată. <br/><br/>
+• Pe pagina de rapoarte există un grafic cu bare unde fiecare bară reprezintă fiecare rezultat generat la chetionarul de orientare profesională și procentul utilizatorilor înscriși pe site care au obținut aceeași ramură printre ramurile din rezultatul său generat la finalul quiz-ului. <br/><br/>
+• Se pot descărca într-un fișier excel specializările din țară care fac parte din ramurile din rezultatul utilizatorului, fiecare ramură fiind pe câte o foaie separată. <br/><br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028986-97428ca9-2419-4b44-aa0a-74c9cedd6668.png)
 ![image](https://user-images.githubusercontent.com/74931542/196029037-e1f20f92-d87e-42ab-892b-73c5528f70bb.png)
-
+<br/><br/>
+• Pagina de explorare a opțiunilor universitare este accesibilă și persoanelor care dețin un cont și celor care nu dețin, însă funționalitățile comune sunt doar filtrarea și sortarea opțiunilor și vizualizarea comentariilor. <br/><br/>
+![image](https://user-images.githubusercontent.com/74931542/220297622-b5dff7c3-251b-426c-9522-030ca6ed335f.png) 
+![image](https://user-images.githubusercontent.com/74931542/220297739-efa48625-f41c-4289-aab1-11f70edfa018.png) <br/><br/>
+• Persoanele care dețin un cont pot posta comentarii, însă acestea vor fi vizibile numai după ce sunt aprobate de către administrator. Utilizatorul va fi notificat cu un email în acest sens. <br/><br/>
+![image](https://user-images.githubusercontent.com/74931542/220298438-d8179d08-63ff-4180-920f-82b69debfffd.png)
+![image](https://user-images.githubusercontent.com/74931542/220298855-db1c9996-7b66-4336-a635-02ba327b497c.png)
+<br/><br/>
+• Chestionarul este compus din 30 de întrebări la care se poate răspunde cu DA/NU, iar la finalul parcurgerii lui utilizatorul primește maxim 5 recomandări de ramuri de studiu potrivite lui. Rezultatul se salvează pe pagina de profil, așa cum am exemplificat mai sus. <br/><br/>
+![image](https://user-images.githubusercontent.com/74931542/220299429-485fb71a-7348-4594-bec2-dbea7250e831.png)
+![image](https://user-images.githubusercontent.com/74931542/220299470-199bdb45-d166-4c51-95e0-62069dae98c6.png)
+<br/><br/>
+• În pagina de chat utilizatorul poate conversa pe 34 de canale cu ceilalți utilizatori ai aplicației. Mesajele rămân salvate în baza de date, astfel că utilizatorii pot reveni asupra lor oricând este nevoie. Fiecare mesaj este marcat cu poza de profil și emailul utilizatorului care a trimis mesajul, dar și data și ora la care acesta a fost trimis. De asemenea, există posibilitatea integrării emoticoanelor în mesaje. <br/><br/>
+![image](https://user-images.githubusercontent.com/74931542/220299775-248caf4a-eec6-4d84-872d-aafe264998dd.png)
+### Interfața pentru adminstrator
+• Administratorul poate aproba sau șterge comentarii și poate gestiona înregistrările din baza de date (adăugare/modificare/ștergere).<br/><br/>
+![image](https://user-images.githubusercontent.com/74931542/220301015-2148fe17-3902-411c-a9a9-7b474f2bdb9d.png)
+![image](https://user-images.githubusercontent.com/74931542/220301127-66cbb07c-e33f-4c73-b8dd-7850a47d875e.png)

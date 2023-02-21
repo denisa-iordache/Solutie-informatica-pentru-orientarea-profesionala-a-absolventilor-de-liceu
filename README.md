@@ -30,7 +30,7 @@ Aplicația este compusă din 7 pagini diferite: „Acasă”, „Creează un con
 • De asemenea, poate vizualiza rezultatele ultimei parcurgeri a chestionarului prin apăsarea butonului „Rezultate chestionar”, adică topul ramurilor de studii care i se potrivesc. <br/><br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028952-f7376aea-0b72-4dab-80bd-1f459251df3a.png)
 <br/><br/>
-• Pe pagina de rapoarte există un grafic cu bare unde fiecare bară reprezintă fiecare rezultat generat la chetionarul de orientare profesională și procentul utilizatorilor înscriși pe site care au obținut aceeași ramură printre ramurile din rezultatul său generat la finalul quiz-ului. <br/><br/>
+• Pe pagina de rapoarte există un grafic cu bare unde fiecare bară reprezintă fiecare rezultat generat la chetionarul de orientare profesională și procentul utilizatorilor înscriși pe site care au obținut aceeași ramură printre ramurile din rezultatul său generat la finalul quiz-ului. <br/>
 • Se pot descărca într-un fișier excel specializările din țară care fac parte din ramurile din rezultatul utilizatorului, fiecare ramură fiind pe câte o foaie separată. <br/><br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028986-97428ca9-2419-4b44-aa0a-74c9cedd6668.png)
 ![image](https://user-images.githubusercontent.com/74931542/196029037-e1f20f92-d87e-42ab-892b-73c5528f70bb.png)

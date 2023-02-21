@@ -11,15 +11,19 @@ Aplicația este destinată elevilor de clasa a 12-a pentru a avea o imagine mai 
 Aplicația este compusă din 7 pagini diferite: „Acasă”, „Creează un cont”, „Intră în cont”, pagina de profil, „Opțiuni universitare”, „Chestionar de orientare în carieră” și „Camere de chat”. De asemenea, este responsive, având un aspect plăcut și practic și pe mobil, motiv pentru care unele din următoarele imagini o să fie inserate și utilizând vizualizarea pentru mobil. <br/> <br/>
 • Pe pagina „Acasă” sunt prezentate într-o componentă de tip Carousel funcționalitățile oferite de platformă pentru utilizator. <br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028801-fbbca7af-4aaf-4a0a-a7e9-9d07f954bd53.png)
+<br/>
 • În pagina de creare a contului utilizatorul poate crea un cont în mod clasic, prin introducerea datelor solicitate sau se poate autentifica folosind un cont Google. Pentru autentificarea unui utilizator existent sunt solicitate doar emailul și parola, sau, de asemenea, se poate autentifica folosind Google.<br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028826-ce3b5224-0721-4da0-9c77-9d11d463fa57.png) <br/>
 • În cazul în care utilizatorul uită parola aferentă contului său, poate accesa opțiunea „Forgot password?”, iar în formularul generat dacă introduce adresa de email, i se va genera un email cu un link de resetare a parolei. <br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028905-c7de20ff-040d-4cf5-a765-fb9f190be6cb.png)
+<br/>
 • În pagina de profil utilizatorul își poate actualiza datele personale (nume, prenume, email, username, parolă) sau poza de profil. Există opțiunea de ștergere cont în cazul în care o persoană nu mai dorește să facă parte din comunitatea platformei, iar pentru a evita atingerile accidentale ale acestui buton, se deschide o fereastră modală de confirmare a acțiunii de ștergere a contului. <br/>
 • Dacă utilizatorul este autentificat în cont, atunci antetul, pe lângă tab-urile „Acasă”, „Opțiuni universitare”, „Chestionar de orientare în carieră” și „Camere de chat”, care sunt prezente și în cazul în care nu este activ un cont, este populat și cu emailul utilizatorului curent, care de fapt este un link către pagina de profil, poza de profil a lui și opțiunea de deconectare. <br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028942-a7057bcc-21de-4408-9c98-a4481feef3a4.png)
+<br/>
 • De asemenea, poate vizualiza rezultatele ultimei parcurgeri a chestionarului prin apăsarea butonului „Rezultate chestionar”, adică topul ramurilor de studii care i se potrivesc. <br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028952-f7376aea-0b72-4dab-80bd-1f459251df3a.png)
+<br/>
 • Pe pagina de rapoarte există un grafic cu bare unde fiecare bară reprezintă fiecare rezultat generat la chetionarul de orientare profesională și procentul utilizatorilor înscriși pe site care au obținut aceeași ramură printre ramurile din rezultatul său generat la finalul quiz-ului. <br/>
 Se pot descărca într-un fișier excel specializările din țară care fac parte din ramurile din rezultatul utilizatorului, fiecare ramură fiind pe câte o foaie separată. <br/>
 ![image](https://user-images.githubusercontent.com/74931542/196028986-97428ca9-2419-4b44-aa0a-74c9cedd6668.png)
